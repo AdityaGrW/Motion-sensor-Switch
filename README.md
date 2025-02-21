@@ -6,6 +6,7 @@ This project shows how to make a low cost motion sensor light switch using the C
 - [Required Components](#required-components)
 - [Setup Instructions](#setup-instructions)
 - [Usage Instructions](#usage-instructions)
+- [APPLICATIONS](#APPLICATIONS)
 
 ## Introduction
 Here, each time the IR proximity sensor sense detects any motion, it send the clock pulse to CD4017 IC. Then the 4017 changes its previous state.When anyone enters the room the IR proximity sensor senses the motion and turns on the light.
@@ -32,6 +33,17 @@ The clock pin (Pin-14) of CD4017 IC is connected with the output pin of LM358. S
 The Pin-2 of CD4017 is connected with the base of the BC547 NPN transistor, So when the Pin-2 becomes high the transistor turns on.
  When the transistor turns on, the current can flow through the relay coil. So the load connected with the relay also turns on.
 If the Pin-2 becomes low, the transistor turns off and accordingly the load connected with the relay also turns off.
+
+
+## Usage Instructions
+1. **Power On**: Ensure all components are connected as per the setup instructions. Connect the power supply to the circuit.
+2. **Motion Detection**: The IR proximity sensor will continuously emit infrared radiation. When it detects motion within its range, the infrared reflected from the object will be sensed by the IR receiver.
+3. **Light Activation**: Upon detecting motion, the LM358 IC will compare the received signal and, if it crosses the predefined threshold, will send a clock pulse to the CD4017 IC.
+4. **Relay Activation**: The CD4017 IC will change its state, turning the transistor on, which in turn activates the relay. This will switch on the connected light or load.
+5. **Automatic Turn Off**: When no motion is detected, the IR sensor will not send a signal, causing the relay to turn off the light or load after a predefined interval.
+6. **Adjustments**: Use the 10k trimmer to adjust the sensitivity of the IR proximity sensor as required.
+7. **Troubleshooting**: If the light does not turn on or off as expected, check all connections, ensure the power supply is stable, and verify the components are functioning correctly.
+By following these steps, you can use the motion sensor switch to automatically control lighting in a room.
 
 
 ## APPLICATIONS 
